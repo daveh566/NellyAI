@@ -5,7 +5,10 @@ from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 import requests
 import os
+from config import kuki, BOT_TOKEN
+bot_token= BOT_TOKEN
 
+print("[INFO]: Checking... Your Details")
 @kuki.on_message(
     filters.text
     & filters.reply
