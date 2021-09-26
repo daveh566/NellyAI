@@ -1,3 +1,5 @@
+print("[INFO]: Importing Your API_ID, API_HASH, BOT_TOKEN")
+
 from pyrogram.types import (
   Message, 
 )
