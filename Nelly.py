@@ -54,7 +54,8 @@ async def start(_, message):
                     ]]
         await message.reply_text(messageprivate, reply_markup=InlineKeyboardMarkup(buttons))
 
-
-
-
-kuki.run()
+        await kuki.start()
+print(
+        """
+Your Nelly Is Deployed Successfully.
+"""
