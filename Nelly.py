@@ -6,18 +6,6 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 import requests
 import os
 
-API_ID = os.environ.get("API_ID", None) 
-API_HASH = os.environ.get("API_HASH", None) 
-TOKEN = os.environ.get("TOKEN", None) 
-
-
-kuki = Client(
-      "KukiBot",
-      api_id=API_ID,
-      api_hash=API_HASH,
-      bot_token=TOKEN,
-)
-
 @kuki.on_message(
     filters.text
     & filters.reply
