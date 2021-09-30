@@ -22,12 +22,16 @@ async def kukiai(client: Client, message: Message):
   msg = message.text
   chat_id = message.chat.id
 
-  Kuki =   requests.get(f"https://kuki-api.tk/api/botname/owner/message={msg}").json()
-
-  moezilla = f"{Kuki['reply']}"
-      
-  await client.send_chat_action(message.chat.id, "typing")
-  await message.reply_text(moezilla)
+  if message.text and not message.document:
+        if not kuki_message(context, message):
+            return
+        Message = message.text
+        kuki.send_chat_action(chat_id, action="typing")
+        kukiurl = requests.get('https://kuki-api.tk/api/Raiden/moezilla/message='+Message)
+        Kuki = json.loads(kukiurl.text)
+        kuki = Kuki['reply']
+        sleep(0.3)
+        message.reply_text(kuki, timeout=60)
 
 
 messageprivate = '''
@@ -37,6 +41,7 @@ Hi, I'm Kuki Chat Bot
 messagegroup = '''
 Hi, I'm Kuki Chat Bot
 '''
+
 
 
 
